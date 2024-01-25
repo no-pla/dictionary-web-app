@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Lora, Inconsolata } from "next/font/google";
 import "./globals.css";
+import Provider from "@/provider/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const lora = Lora({ subsets: ["latin"] });
@@ -22,9 +23,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32x32.png" />
       </head>
       <body
-        className={`${inter.className} ${lora.className} ${inconsolata.className}`}
+        className={`${lora.className} ${inconsolata.className} ${inter.className}`}
       >
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
