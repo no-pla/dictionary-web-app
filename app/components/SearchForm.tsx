@@ -35,30 +35,28 @@ const SearchForm = () => {
   }, []);
 
   return (
-    <>
-      <form onSubmit={onSubmit} className="relative">
-        <input
-          type="text"
-          ref={inputRef}
-          placeholder="Search for any word..."
-          className={`w-full rounded-2xl bg-[#f4f4f4] px-6 py-5 border ${
-            error ? "border-[#ff5252]" : "border-transparent"
-          } focus:border-[#A445ed] outline-none cursor-pointer
+    <form onSubmit={onSubmit} className="relative mt-[51px] mb-[45px]">
+      <input
+        type="text"
+        ref={inputRef}
+        placeholder="Search for any word..."
+        className={`w-full rounded-2xl bg-[#f4f4f4] px-6 py-5 border ${
+          error ? "border-[#ff5252]" : "border-transparent"
+        } focus:border-[#A445ed] outline-none cursor-pointer
         dark:bg-[#1f1f1f] dark:text-white
         `}
-        />
-        {error && (
-          <p className="text-[#ff5252] text-headingS">
-            Whoops, can&#39;t be empty...
-          </p>
-        )}
-        <button
-          className={`bg-search w-4 h-4 absolute ${
-            error ? "top-1/3" : "top-1/2"
-          } transform -translate-y-1/2 right-6`}
-        />
-      </form>
-    </>
+      />
+      {error && (
+        <p className="text-[#ff5252] text-headingS">
+          Whoops, can&#39;t be empty...
+        </p>
+      )}
+      <button
+        className={`bg-search w-4 h-4 absolute ${
+          error ? "top-1/3" : "top-1/2"
+        } transform -translate-y-1/2 right-6`}
+      />
+    </form>
   );
 };
 

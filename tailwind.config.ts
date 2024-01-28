@@ -10,7 +10,7 @@ const config: Config = {
     extend: {},
     fontSize: {
       headingL: ["64px", { fontWeight: "700" }],
-      headingM: "24px",
+      headingM: ["24px", { fontWeight: "700" }],
       headingS: "20px",
       bodyM: ["18px", "24px"],
       bodyS: "14px",
