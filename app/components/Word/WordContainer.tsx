@@ -8,9 +8,10 @@ import WordNotFound from "./WordNotFound";
 
 const WordContainer = () => {
   const word = useRecoilValue(wordData);
+  console.log(word);
 
   return word.exist ? (
-    <Word word={word.result} />
+    <Word />
   ) : (
     <WordNotFound
       word={

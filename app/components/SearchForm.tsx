@@ -35,7 +35,7 @@ const SearchForm = () => {
   }, []);
 
   return (
-    <form onSubmit={onSubmit} className="relative mt-[51px] mb-[45px]">
+    <form onSubmit={onSubmit} className="relative mb-[52px]">
       <input
         type="text"
         ref={inputRef}
