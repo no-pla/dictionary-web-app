@@ -1,8 +1,9 @@
 "use client";
 
 import React, { ChangeEvent, useState } from "react";
-import DarkModeIcon from "@/public/images/icon-moon.svg";
 import Image from "next/image";
+import DarkModeIcon from "@/public/images/icon-moon.svg";
+import { MoonSvg } from "./MoonSvg";
 
 const Darkmode = () => {
   const [checked, onChecked] = useState(false);
@@ -29,7 +30,7 @@ const Darkmode = () => {
           } rounded-full`}
         ></span>
       </label>
-      <Image src={DarkModeIcon} alt="Dark mode" />
+      <MoonSvg color={checked ? "#A445ED" : "#838383"} />
     </div>
   );
 };
