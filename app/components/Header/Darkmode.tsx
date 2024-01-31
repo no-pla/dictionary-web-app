@@ -9,6 +9,11 @@ const Darkmode = () => {
   const [checked, onChecked] = useState(false);
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChecked(event.currentTarget.checked);
+    if (event.currentTarget.checked) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
   return (
     <div className="h-5 flex gap-5 items-center">
