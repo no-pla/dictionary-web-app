@@ -1,18 +1,35 @@
 "use client";
 
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { MoonSvg } from "./icons/MoonSvg";
 
 const Darkmode = () => {
   const [checked, onChecked] = useState(false);
+
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChecked(event.currentTarget.checked);
     if (event.currentTarget.checked) {
       document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+    }
+  };
+
+  useEffect(() => {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+      onChecked(true);
     } else {
       document.documentElement.classList.remove("dark");
     }
-  };
+  }, []);
+
   return (
     <div className="h-5 flex gap-5 items-center">
       <label
@@ -26,6 +43,7 @@ const Darkmode = () => {
           type="checkbox"
           className="h-0 w-0 opacity-0"
           onChange={(event) => onChange(event)}
+          checked={checked}
         />
         <span
           className={`text-black absolute cursor-pointer bg-white h-4 w-4 top-1 transition-all ease-in-out duration-100 ${
