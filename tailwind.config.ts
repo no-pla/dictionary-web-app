@@ -19,8 +19,14 @@ const config: Config = {
     backgroundImage: {
       search: 'url("/images/icon-search.svg")',
     },
+    boxShadow: {
+      fontShadow: "0 5px 30px 0 rgba(0, 0, 0, 0.1)",
+      fontShadowDark: "0 5px 30px 0 #A445ED",
+    },
   },
 
   plugins: [],
 };
 export default config;
+
+//
