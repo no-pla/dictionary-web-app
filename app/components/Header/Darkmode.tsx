@@ -1,9 +1,7 @@
 "use client";
 
 import React, { ChangeEvent, useState } from "react";
-import Image from "next/image";
-import DarkModeIcon from "@/public/images/icon-moon.svg";
-import { MoonSvg } from "./MoonSvg";
+import { MoonSvg } from "./icons/MoonSvg";
 
 const Darkmode = () => {
   const [checked, onChecked] = useState(false);
