@@ -8,7 +8,11 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "spin-slow": "spin 2s ease-in-out infinite",
+      },
+    },
     fontSize: {
       headingL: ["64px", { fontWeight: "700" }],
       headingM: ["24px", { fontWeight: "700" }],

@@ -18,15 +18,17 @@ const Darkmode = () => {
   };
 
   useEffect(() => {
+    const theme = localStorage.getItem("theme");
+
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      theme === "dark" ||
+      window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       document.documentElement.classList.add("dark");
       onChecked(true);
     } else {
       document.documentElement.classList.remove("dark");
+      onChecked(false);
     }
   }, []);
 
