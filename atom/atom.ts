@@ -7,7 +7,7 @@ export const wordData = atom<any>({
   },
 });
 
-export const fontData = atom<any>({
+export const fontData = atom<string>({
   key: "font",
   default: "serif",
 });

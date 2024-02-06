@@ -1,5 +1,7 @@
+"use client";
+
 import { fontData } from "@/atom/atom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import ToggleSvg from "./icons/ToggleSvg";
 
@@ -9,7 +11,16 @@ const SelectFont = () => {
 
   const selectFont = (event: any) => {
     setFont(event.currentTarget.dataset.id);
+    localStorage.setItem("font", event.currentTarget.dataset.id);
   };
+
+  useEffect(() => {
+    if (!("font" in localStorage)) {
+      localStorage.setItem("font", "serif");
+    } else {
+      setFont(localStorage.getItem("font")!);
+    }
+  }, []);
 
   return (
     <div
