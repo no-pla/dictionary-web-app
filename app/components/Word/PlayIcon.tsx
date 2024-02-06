@@ -1,6 +1,6 @@
 import React from "react";
 
-const PlayIcon = ({ audio, width, height }: any) => {
+const PlayIcon = ({ audio }: { audio: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

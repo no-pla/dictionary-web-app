@@ -3,32 +3,35 @@
 import { wordData } from "@/atom/atom";
 import React, { useEffect, useRef, useState } from "react";
 import { useSetRecoilState } from "recoil";
+import FormLoading from "./FormLoading";
 
 const SearchForm = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const setWord = useSetRecoilState(wordData);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (loading) return;
     if (inputRef.current?.value === "" || !inputRef.current) {
       setError(true);
       return;
     }
-
+    setLoading(true);
     const response = await fetch(
       `/api/dictionary?word=${inputRef?.current.value}`,
       {
         method: "GET",
       }
     );
-    console.log(response);
 
     const word = await response?.json();
     setWord(word);
     if (error) {
       setError(false);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -57,6 +60,7 @@ const SearchForm = () => {
           error ? "top-1/3" : "top-1/2"
         } transform -translate-y-1/2 right-6`}
       />
+      {loading && <FormLoading error={error} />}
     </form>
   );
 };
