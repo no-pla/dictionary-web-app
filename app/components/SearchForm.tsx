@@ -22,8 +22,9 @@ const SearchForm = () => {
         method: "GET",
       }
     );
+    console.log(response);
 
-    const word = await response.json();
+    const word = await response?.json();
     setWord(word);
     if (error) {
       setError(false);
@@ -35,7 +36,7 @@ const SearchForm = () => {
   }, []);
 
   return (
-    <form onSubmit={onSubmit} className="relative mb-[52px]">
+    <form onSubmit={onSubmit} className="relative mb-[52px] sm:my-6">
       <input
         type="text"
         ref={inputRef}
@@ -43,7 +44,7 @@ const SearchForm = () => {
         className={`w-full rounded-2xl bg-[#f4f4f4] px-6 py-5 border ${
           error ? "border-[#ff5252]" : "border-transparent"
         } focus:border-[#A445ed] outline-none cursor-pointer
-        dark:bg-[#1f1f1f] dark:text-white
+        dark:bg-[#1f1f1f] dark:text-white sm:py-3 sm:text-[16px] fold:text-[12px]
         `}
       />
       {error && (

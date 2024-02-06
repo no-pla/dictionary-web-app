@@ -1,15 +1,15 @@
 import React from "react";
 
-const PlayIcon = ({ audio }: any) => {
+const PlayIcon = ({ audio, width, height }: any) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="75"
-      height="75"
+      width=""
+      height=""
       viewBox="0 0 75 75"
-      className="group"
+      className="group w-[75px] h-[75px] sm:w-12 sm:h-12"
     >
-      <g fill="#A445ED" fill-rule="evenodd">
+      <g fill="#A445ED" fillRule="evenodd">
         <circle
           cx="37.5"
           cy="37.5"

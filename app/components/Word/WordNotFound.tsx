@@ -10,11 +10,15 @@ interface WordNotFoundData {
 const WordNotFound = ({ word }: { word: WordNotFoundData }) => {
   return (
     <div className="text-center mt-[132px]">
-      <span className="text-[64px]">{word.icon}</span>
-      <div className="my-6 font-bold text-headingS">{word?.title}</div>
-      <div className="text-bodyM text-[#757575]">
+      <span className="text-[64px] sm:text-[52px] fold:text-[48px]">
+        {word.icon}
+      </span>
+      <div className="my-6 font-bold text-headingS sm:text-[16px] sm:my-4 fold:text-[12px]">
+        {word?.title}
+      </div>
+      <div className="text-bodyM text-[#757575] sm:text-[14px] fold:text-[10px] fold:leading-[16px]">
         <span>{word?.message}</span>
-        <span>{word?.resolution}</span>
+        <span>&nbsp;{word?.resolution}</span>
       </div>
     </div>
   );

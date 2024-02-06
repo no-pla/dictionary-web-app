@@ -25,7 +25,7 @@ const SelectFont = () => {
   return (
     <div
       onClick={() => setOpenFont((prev) => !prev)}
-      className="flex items-center gap-6 cursor-pointer"
+      className="flex items-center gap-6 cursor-pointer sm:gap-4 sm:text-[14px] fold:text-[12px] fold:gap-2"
     >
       <div className="relative">
         <div className={`font-${font} font-bold`}>
@@ -33,7 +33,7 @@ const SelectFont = () => {
         </div>
         {openFont && (
           <ul
-            className={`absolute top-9 right-[-60px] w-[183px] text-[18px] font-bold bg-white p-6 flex flex-col gap-4 z-10 rounded-2xl shadow-fontShadow dark:bg-[#1f1f1f] dark:shadow-fontShadowDark`}
+            className={`absolute top-9 left-0 w-[183px] text-[18px] font-bold bg-white p-6 flex flex-col gap-4 z-10 rounded-2xl shadow-fontShadow dark:bg-[#1f1f1f] dark:shadow-fontShadowDark sm:text-[14px] sm:left-0 sm:w-[160px] fold:left-0`}
           >
             <li
               onClick={(event) => selectFont(event)}
