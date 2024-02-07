@@ -5,6 +5,7 @@ import { wordData } from "@/atom/atom";
 import WordMeaning from "./WordMeaning";
 import Image from "next/image";
 import ShareIcon from "@/public/images/icon-new-window.svg";
+import Link from "next/link";
 
 interface WordDefinition {
   id: number;
@@ -27,12 +28,11 @@ interface WordDefinition {
 
 const Word = () => {
   const { result: words } = useRecoilValue(wordData);
-
   return (
     <>
       {words.map((word: any, index: number) => {
         return (
-          <div key={index} className="flex flex-col gap-10">
+          <div key={index} className="flex flex-col gap-10 sm:gap-9">
             <WordTitle
               word={{
                 word: word.word,
@@ -41,10 +41,18 @@ const Word = () => {
               }}
             />
             <WordMeaning meaning={word.meanings} />
-            <div className="border-t border-[#979797] flex items-center">
-              <div className="my-5 mr-5 text-[#979797]">Source</div>
-              <div className="my-5 mr-2">{word.sourceUrls[0]}</div>
-              <Image src={ShareIcon} alt="open origin source" />
+            <div className="border-t border-[#979797] flex items-center text-bodyS py-5 sm:flex-col sm:items-start gap-[10px]">
+              <div className="mr-5 text-[#979797] underline">Source</div>
+              <div className="flex">
+                <Link
+                  href={word.sourceUrls[0]}
+                  className="break-all underline mr-2"
+                  target="_blank"
+                >
+                  {word.sourceUrls[0]}
+                </Link>
+                <Image src={ShareIcon} alt="open origin source" />
+              </div>
             </div>
           </div>
         );
