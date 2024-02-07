@@ -33,7 +33,7 @@ const Dictionary = () => {
           <Loading />
         </div>
       )}
-      <div className="w-full max-w-[736px]">
+      <div className="w-full max-w-[736px] md:px-5">
         <Header />
         <SearchForm />
         <WordContainer />
