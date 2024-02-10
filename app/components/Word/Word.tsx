@@ -9,28 +9,38 @@ import Link from "next/link";
 
 interface WordDefinition {
   id: number;
-  license: { name: string; url: string };
-  meanings: {
-    antonyms: any[];
-    definitions: {
-      antonyms: any[];
-      definition: string;
-      synonyms: any[];
-    }[];
-    partOfSpeech: string;
-    synonyms: string[];
-  }[];
+  license: {
+    name: string;
+    url: string;
+  };
+  meanings: Meaning[];
   phonetic: string;
-  phonetics: any;
-  sourceUrls: string[];
+  phonetics:
+    | {
+        audio: string;
+        text: string;
+      }[]
+    | [];
+  sourceUrls: string[] | [];
   word: string;
+}
+
+export interface Meaning {
+  antonyms: string[] | [];
+  definitions: {
+    antonyms: string[] | [];
+    definition: string;
+    synonyms: string[] | [];
+  }[];
+  partOfSpeech: string;
+  synonyms: string[] | [];
 }
 
 const Word = () => {
   const { result: words } = useRecoilValue(wordData);
   return (
     <>
-      {words.map((word: any, index: number) => {
+      {words.map((word: WordDefinition, index: number) => {
         return (
           <div key={index} className="flex flex-col gap-10 sm:gap-9">
             <WordTitle
