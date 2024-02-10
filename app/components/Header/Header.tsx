@@ -7,7 +7,7 @@ import Darkmode from "./Darkmode";
 import SelectFont from "./SelectFont";
 import LogoIcon from "./icons/LogoIcon";
 
-const Header = ({ resetError }: { resetError: () => void }) => {
+const Header = ({ resetError }: any) => {
   const reset = useResetRecoilState(wordData);
 
   const onClickReset = () => {
