@@ -1,7 +1,15 @@
 import React from "react";
 import PlayIcon from "./PlayIcon";
 
-const WordTitle = ({ word }: any) => {
+interface WordData {
+  word: {
+    audio?: string;
+    word: string;
+    phonetic?: string;
+  };
+}
+
+const WordTitle = ({ word }: WordData) => {
   const audio = new Audio(word.audio);
   const playAudio = () => {
     audio.play();
@@ -24,7 +32,7 @@ const WordTitle = ({ word }: any) => {
           word?.audio ? "cursor-pointer" : "cursor-not-allowed"
         } sm:w-12 sm:h-12`}
       >
-        <PlayIcon audio={word?.audio} />
+        <PlayIcon audio={word?.audio!} />
       </button>
     </div>
   );

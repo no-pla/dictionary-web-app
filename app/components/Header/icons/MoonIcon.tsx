@@ -1,6 +1,6 @@
 import React from "react";
 
-const MoonSvg = ({ color }: { color: string }) => {
+const MoonIcon = ({ color }: { color: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,4 +20,4 @@ const MoonSvg = ({ color }: { color: string }) => {
   );
 };
 
-export { MoonSvg };
+export { MoonIcon };
