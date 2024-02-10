@@ -4,8 +4,6 @@ const PlayIcon = ({ audio }: { audio: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width=""
-      height=""
       viewBox="0 0 75 75"
       className="group w-[75px] h-[75px] sm:w-12 sm:h-12"
     >

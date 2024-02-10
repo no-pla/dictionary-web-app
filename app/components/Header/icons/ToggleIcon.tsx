@@ -1,6 +1,6 @@
 import React from "react";
 
-const ToggleSvg = () => {
+const ToggleIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,4 +13,4 @@ const ToggleSvg = () => {
   );
 };
 
-export default ToggleSvg;
+export default ToggleIcon;
