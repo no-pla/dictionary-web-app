@@ -10,6 +10,7 @@ import { fontData } from "@/atom/atom";
 
 const Dictionary = () => {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const setFont = useSetRecoilState(fontData);
 
   useEffect(() => {
@@ -38,8 +39,8 @@ const Dictionary = () => {
         </div>
       )}
       <div className="w-full max-w-[736px] md:px-5">
-        <Header />
-        <SearchForm />
+        <Header resetError={setError} />
+        <SearchForm setError={setError} error={error} />
         <WordContainer />
       </div>
     </>

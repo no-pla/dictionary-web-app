@@ -5,9 +5,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSetRecoilState } from "recoil";
 import FormLoading from "./FormLoading";
 
-const SearchForm = () => {
+const SearchForm = ({ error, setError }: { error: boolean; setError: any }) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const setWord = useSetRecoilState(wordData);
 
@@ -51,7 +50,7 @@ const SearchForm = () => {
         `}
       />
       {error && (
-        <p className="text-[#ff5252] text-headingS">
+        <p className="text-[#ff5252] text-headingS md:text-[18px] sm:text-[14px] mt-2">
           Whoops, can&#39;t be empty...
         </p>
       )}

@@ -7,12 +7,17 @@ import Darkmode from "./Darkmode";
 import SelectFont from "./SelectFont";
 import LogoIcon from "./icons/LogoIcon";
 
-const Header = () => {
+const Header = ({ resetError }: { resetError: () => void }) => {
   const reset = useResetRecoilState(wordData);
+
+  const onClickReset = () => {
+    reset();
+    resetError();
+  };
 
   return (
     <header className="my-14 flex justify-between w-full sm:my-6">
-      <button onClick={reset}>
+      <button onClick={onClickReset}>
         <LogoIcon />
       </button>
       <div className="flex items-center">
