@@ -1,11 +1,9 @@
 import React from "react";
 
-const LogoSvg = () => {
+const LogoIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width=""
-      height=""
       viewBox="0 0 34 38"
       className="w-[34px] sm:w-8 fold:w-7"
     >
@@ -24,4 +22,4 @@ const LogoSvg = () => {
   );
 };
 
-export default LogoSvg;
+export default LogoIcon;

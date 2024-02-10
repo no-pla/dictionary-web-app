@@ -5,7 +5,7 @@ import { useResetRecoilState } from "recoil";
 import { wordData } from "@/atom/atom";
 import Darkmode from "./Darkmode";
 import SelectFont from "./SelectFont";
-import LogoSvg from "./icons/LogoSvg";
+import LogoIcon from "./icons/LogoIcon";
 
 const Header = () => {
   const reset = useResetRecoilState(wordData);
@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className="my-14 flex justify-between w-full sm:my-6">
       <button onClick={reset}>
-        <LogoSvg />
+        <LogoIcon />
       </button>
       <div className="flex items-center">
         <SelectFont />

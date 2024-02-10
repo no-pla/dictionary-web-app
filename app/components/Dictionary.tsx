@@ -5,9 +5,12 @@ import Loading from "./Loading";
 import Header from "./Header/Header";
 import SearchForm from "./SearchForm";
 import WordContainer from "./Word/WordContainer";
+import { useSetRecoilState } from "recoil";
+import { fontData } from "@/atom/atom";
 
 const Dictionary = () => {
   const [loading, setLoading] = useState(true);
+  const setFont = useSetRecoilState(fontData);
 
   useEffect(() => {
     const font = localStorage.getItem("font");
@@ -24,6 +27,7 @@ const Dictionary = () => {
       localStorage.setItem("font", "sans");
     }
     setLoading(false);
+    setFont(localStorage.getItem("font")!);
   }, []);
 
   return (

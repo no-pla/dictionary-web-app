@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { MoonSvg } from "./icons/MoonSvg";
+import { MoonIcon } from "./icons/MoonIcon";
 
 const Darkmode = () => {
   const [checked, onChecked] = useState(false);
@@ -20,10 +20,7 @@ const Darkmode = () => {
   useEffect(() => {
     const theme = localStorage.getItem("theme");
 
-    if (
-      theme === "dark" ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
       onChecked(true);
     } else {
@@ -53,7 +50,7 @@ const Darkmode = () => {
           } rounded-full`}
         ></span>
       </label>
-      <MoonSvg color={checked ? "#A445ED" : "#838383"} />
+      <MoonIcon color={checked ? "#A445ED" : "#838383"} />
     </div>
   );
 };

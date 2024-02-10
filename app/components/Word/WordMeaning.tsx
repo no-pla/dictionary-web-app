@@ -32,14 +32,14 @@ const WordMeaning = ({ meaning }: any) => {
                 );
               })}
             </ul>
-            {/* {mean?.synonyms.length !== 0 && (
+            {mean?.synonyms.length !== 0 && (
               <div className="mt-6">
                 <span className="text-[#757575] mr-4">Synonyms</span>
                 <span className="text-[#A445ED]">
                   {mean?.synonyms.join(", ")}
                 </span>
               </div>
-            )} */}
+            )}
           </div>
         );
       })}
